@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html, body, #root, .App {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat', 'Helevtica', sans-serif;
+  box-sizing: border-box;
+}
+
+.App {
+  background-color: #f2ecec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+  padding: 3rem;
+
+  &__logo {
+    width: 12rem;
+  }
+}

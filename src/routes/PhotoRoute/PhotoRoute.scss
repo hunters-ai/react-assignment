@@ -1,0 +1,14 @@
+.r-PhotoRoute {
+  display: flex;
+  column-gap: 2rem;
+  width: 100%;
+
+  &__all-photos {
+    width: max(20rem, 20vw);
+    border-right: 1px solid #ccc;
+  }
+
+  &__photo {
+
+  }
+}
