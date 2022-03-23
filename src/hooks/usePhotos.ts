@@ -1,17 +1,20 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { photosSelector } from '../redux/selectors/photos.selectors'
+import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchPhotos } from '../redux/actions/photos.actions'
+import { useAppSelector } from '../hooks'
 
 export const usePhotos = () => {
   const dispatch = useDispatch()
-  const { photos, isFetching } = useSelector(photosSelector)
+  const { photos, isFetching, selectedAuthorId } = useAppSelector(state => state.photosReducer)
 
   useEffect(() => {
-    dispatch(fetchPhotos())
-  }, [])
+    if (!photos.length) {
+      dispatch(fetchPhotos())
+    }
+  }, [photos])
 
   return {
+    selectedAuthorId,
     photos,
     isFetching
   }

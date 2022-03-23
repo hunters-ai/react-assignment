@@ -30,6 +30,10 @@
     &:nth-child(3) {
       animation-delay: -0.15s;
     }
+
+    &.hide {
+      display: none;
+    }
   }
 }
 

@@ -6,9 +6,22 @@
   &__all-photos {
     width: max(20rem, 20vw);
     border-right: 1px solid #ccc;
+
+    li {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   &__photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
+      img {
+        cursor: pointer;
+      }
   }
 }
