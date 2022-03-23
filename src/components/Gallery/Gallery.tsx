@@ -5,13 +5,17 @@ import './Gallery.scss'
 
 interface IGalleryProps {
   photos: Photo[];
+  onSelection: (photoLink: string) => void
 }
 
-export const Gallery = ({ photos }: IGalleryProps) => (
+export const Gallery = ({ photos, onSelection }: IGalleryProps) => (
   <div className="c-Gallery">
-    {photos.map(() => (
-      <figure>
-        <img src={''} alt={''}/>
+    {photos.map((photo) => (
+      <figure key={photo.link}>
+        <img onClick={() => onSelection(btoa(photo.link))}
+             src={photo?.media?.m}
+             alt={photo?.title}
+        />
       </figure>
     ))}
   </div>
